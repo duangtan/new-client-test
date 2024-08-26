@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login with Botnoi</title>
+</head>
+<body>
+  <h1>Login with Botnoi</h1>
+  <button id="sign-in-button">Sign in with Botnoi</button>
+  <script>
+    document.getElementById('sign-in-button').addEventListener('click', function() {
+      const clientId = 'YOUR_CLIENT_ID';
+      const redirectUri = 'https://homepage-botnoi-test.netlify.app/'; 
+      const callbackUri = 'https://my-api-project-3nnvrsunh-duangtans-projects.vercel.app/callback';
+      const scope = 'email profile';
+      const responseType = 'token'; 
+      const authUrl = `https://my-api-project-3nnvrsunh-duangtans-projects.vercel.app/oauth/authorize?client_id=${clientId}&redirect_uri=${redirectUri}&scope=${scope}&response_type=${responseType}&callback_uri=${callbackUri}`;
+
+      const windowFeatures = "width=500,height=600,resizable=yes,scrollbars=yes,status=yes";
+      window.open(authUrl, "Botnoi Login", windowFeatures);
+    });
+  </script>
+</body>
+</html>
